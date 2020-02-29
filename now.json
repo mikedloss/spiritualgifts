@@ -1,0 +1,14 @@
+{
+  "env": {
+    "TYPE": "@sg-type",
+    "PROJECT_ID": "@sg-project_id",
+    "PRIVATE_KEY_ID": "@sg-private_key_id",
+    "PRIVATE_KEY": "@sg-private_key",
+    "CLIENT_EMAIL": "@sg-client_email",
+    "CLIENT_ID": "@sg-client_id",
+    "AUTH_URI": "@sg-auth_uri",
+    "TOKEN_URI": "@sg-token_uri",
+    "AUTH_PROVIDER_X509_CERT_URL": "@sg-auth_provider_x509_cert_url",
+    "CLIENT_X509_CERT_URL": "@sg-client_x509_cert_url"
+  }
+}
