@@ -7,12 +7,14 @@ import {
 import thunkMiddleware from "redux-thunk";
 import { persistStore } from "redux-persist";
 
-import surveyReducer from "./survey/reducer";
 import questionsReducer from "./questions/reducer";
+import surveyReducer from "./survey/reducer";
+import resultsReducer from "./results/reducer";
 
 const rootReducer = combineReducers({
+  questions: questionsReducer,
   survey: surveyReducer,
-  questions: questionsReducer
+  results: resultsReducer
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

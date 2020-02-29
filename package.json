@@ -11,6 +11,8 @@
     "@fullhuman/postcss-purgecss": "^2.1.0",
     "autoprefixer": "^9.7.4",
     "axios": "^0.19.2",
+    "date-fns": "^2.10.0",
+    "date-fns-tz": "^1.0.10",
     "firebase-admin": "^8.9.2",
     "lodash": "^4.17.15",
     "next": "9.2.2",
@@ -20,18 +22,22 @@
     "react": "16.13.0",
     "react-dom": "16.13.0",
     "react-redux": "^7.2.0",
+    "recharts": "^2.0.0-beta.1",
     "redux": "^4.0.5",
     "redux-persist": "^6.0.0",
     "redux-thunk": "^2.3.0",
     "tailwindcss": "^1.2.0",
-    "tailwindcss-plugins": "^0.3.0"
+    "tailwindcss-plugins": "^0.3.0",
+    "uuid": "^7.0.1"
   },
   "devDependencies": {
     "@types/node": "^13.7.6",
     "@types/react": "^16.9.23",
     "@types/react-dom": "^16.9.5",
     "@types/react-redux": "^7.1.7",
+    "@types/recharts": "^1.8.6",
     "@types/redux-thunk": "^2.1.0",
+    "@types/uuid": "^7.0.0",
     "redux-devtools-extension": "^2.13.8",
     "typescript": "^3.8.2"
   }

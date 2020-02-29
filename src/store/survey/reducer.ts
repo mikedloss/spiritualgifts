@@ -7,15 +7,14 @@ import {
   SUBMIT_ANSWERS_SUCCESS,
   SUBMIT_ANSWERS_ERROR,
   CLEAR_SAVED_PROGRESS,
-  RESET_STATE
+  RESET_STATE,
+  SET_FINISHED
 } from "./types";
 import { Answer } from "../../types";
-import { SummarizedResults } from "../../types/Results";
 
 export interface SurveyState {
   error: string | null;
   answers: Answer[];
-  results: SummarizedResults;
   loading: boolean;
   finished: boolean;
   surveyType: "short" | "wagner-houts";
@@ -24,7 +23,6 @@ export interface SurveyState {
 const initialState: SurveyState = {
   error: null,
   answers: [],
-  results: null,
   loading: false,
   finished: false,
   surveyType: "short"
@@ -38,6 +36,9 @@ const surveyReducer = (
   switch (action.type) {
     case SET_LOADING:
       return { ...state, loading: action.payload };
+    case SET_FINISHED: {
+      return { ...state, finished: action.payload };
+    }
     case ANSWER_QUESTION:
       const existingAnswerIndex = findIndex(
         newAnswers,
@@ -57,10 +58,9 @@ const surveyReducer = (
       // action.payload contains the current question, so we need to remove everything after this given question ID
       // in case the user is in the middle of the survey
       newAnswers = newAnswers.filter(a => a.question < action.payload);
-
       return { ...state, answers: newAnswers };
     case SUBMIT_ANSWERS_SUCCESS:
-      return { ...state, answers: [], results: action.payload, finished: true };
+      return { ...state, finished: true };
     case RESET_STATE:
       return initialState;
     default:

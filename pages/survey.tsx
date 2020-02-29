@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { clone, isEmpty } from "lodash";
 import { useRouter } from "next/router";
+import { v1 as uuidv1 } from "uuid";
 
 import Layout from "../src/components/Layout";
 import Header from "../src/components/Header";
@@ -25,7 +26,6 @@ const Survey = () => {
   const questions = useSelector(state => state.questions);
   const survey = useSelector(state => state.survey);
   const dispatch = useDispatch();
-  const router = useRouter();
 
   useEventListener("keydown", (event: any) =>
     surveyKeypress(event, nextQuestion)
@@ -39,8 +39,8 @@ const Survey = () => {
 
   useEffect(() => {
     if (currentId === questions.questions.length) {
-      dispatch(submitAnswers(survey.answers));
-      router.push("/results");
+      const docId = uuidv1();
+      dispatch(submitAnswers(survey.answers, docId));
     }
   }, [survey.answers]);
 
@@ -83,7 +83,7 @@ const Survey = () => {
     !isEmpty(survey.answers) &&
     survey.answers.length > currentId;
 
-  return !haveQuestions ? (
+  return !haveQuestions || survey.finished ? (
     <Layout>
       <p>Loading...</p>
     </Layout>

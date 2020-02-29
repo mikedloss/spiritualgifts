@@ -1,6 +1,6 @@
 import * as admin from "firebase-admin";
 
-export const getFirebaseObject = () => {
+export const getFirebaseObject = (): admin.firestore.Firestore => {
   let firebase;
   if (!admin.apps.length) {
     let config;
