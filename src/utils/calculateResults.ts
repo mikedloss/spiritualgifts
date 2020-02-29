@@ -9,7 +9,7 @@ export class SpiritualGifts {
   results: SummarizedResults = {
     top3: [],
     fullResults: [],
-    simpleResults: []
+    simpleResults: [],
   };
 
   constructor(answers: Answer[], gifts: Gift[]) {

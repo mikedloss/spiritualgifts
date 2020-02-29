@@ -15,5 +15,5 @@ export interface SummarizedResults {
   simpleResults: SimpleResult[];
   top3: GiftWithScore[];
   email?: string;
-  dateCreated: string;
+  dateCreated?: string;
 }
