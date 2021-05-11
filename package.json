@@ -14,7 +14,7 @@
     "date-fns": "^2.10.0",
     "date-fns-tz": "^1.0.10",
     "firebase-admin": "^8.9.2",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "next": "9.2.2",
     "next-redux-wrapper": "^5.0.0",
     "next-seo": "^4.4.0",
